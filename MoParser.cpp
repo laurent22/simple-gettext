@@ -50,10 +50,14 @@ void GettextMoParser::clearData() {
 
   for (int i = 0; i < (int)messages_.size(); i++) {
     TranslatedMessage* message = messages_.at(i);
+    if (message->original) {
     delete[] message->original->string;
     delete message->original;
+    }
+    if (message->translated) {
     delete[] message->translated->string;
     delete message->translated;
+    }
     delete message;
   }
   messages_.clear();
