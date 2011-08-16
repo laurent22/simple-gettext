@@ -4,11 +4,12 @@
   found in the LICENSE file.
 */
 
-#include <stable.h>
 
 #ifndef Gettext_QtLocaleUtil_H
 #define Gettext_QtLocaleUtil_H
 
+#include <QString>
+#include <map>
 
 class QtLocaleUtil {
 

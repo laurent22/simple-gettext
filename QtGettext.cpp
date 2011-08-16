@@ -5,6 +5,7 @@
 */
 
 
+#include <QDir>
 #include "QtGettext.h"
 
 
@@ -53,7 +54,7 @@ QString QtGettext::charset() const {
 
 
 QString QtGettext::moFilePath() const {
-  return QString::fromStdString(LauGettext::moFilePath());
+  return QString::fromAscii(LauGettext::moFilePath().c_str());
 }
 
 
@@ -79,15 +80,15 @@ QString QtGettext::getTranslation(const QString& originalString) const {
 
 
 void QtGettext::setCatalogueName(const QString& name) {
-  LauGettext::setCatalogueName(name.toStdString());
+  LauGettext::setCatalogueName(name.toAscii().data()); // name.toStdString());  
 }
 
 
 void QtGettext::setCatalogueLocation(const QString& location) {
-  LauGettext::setCatalogueLocation(location.toStdString());
+  LauGettext::setCatalogueLocation(location.toAscii().data()); // toStdString());
 }
 
 
 void QtGettext::setLocale(const QString& localeCode) {
-  LauGettext::setLocale(localeCode.toStdString());
+  LauGettext::setLocale(localeCode.toAscii().data());  // toStdString());
 }

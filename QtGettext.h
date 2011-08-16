@@ -8,6 +8,8 @@
 #ifndef Gettext_QtGettext_H
 #define Gettext_QtGettext_H
 
+#include <QString>
+#include <QStringList>
 #include "LauGettext.h"
 
 #undef _
@@ -27,11 +29,11 @@ public:
   void setCatalogueName(const QString& name);
   void setLocale(const QString& localeCode);
   QString moFilePath() const;
-  inline QString locale() const { return QString::fromStdString(LauGettext::locale()); }
-  inline QString languageCode() const { return QString::fromStdString(LauGettext::languageCode()); }
-  inline QString countryCode() const { return QString::fromStdString(LauGettext::countryCode()); }
-  inline QString catalogueName() const { return QString::fromStdString(LauGettext::catalogueName()); }
-  inline QString catalogueLocation() const { return QString::fromStdString(LauGettext::catalogueLocation()); }
+  inline QString locale() const { return QString::fromAscii(LauGettext::locale().c_str()); } //QString::fromStdString(LauGettext::locale()); }
+  inline QString languageCode() const { return QString::fromAscii(LauGettext::languageCode().c_str()); }
+  inline QString countryCode() const { return QString::fromAscii(LauGettext::countryCode().c_str()); }
+  inline QString catalogueName() const { return QString::fromAscii(LauGettext::catalogueName().c_str()); }
+  inline QString catalogueLocation() const { return QString::fromAscii(LauGettext::catalogueLocation().c_str()); }
 
   QString getTranslation(const QString& originalString) const; 
   QStringList availableLocales() const;

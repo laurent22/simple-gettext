@@ -45,8 +45,8 @@ public:
   char* charset() const;
   inline bool ready() const { return ready_; }
 
-  static const int32_t GettextMoParser::HEADER_MAGIC_NUMBER;
-  static const int32_t GettextMoParser::HEADER_MAGIC_NUMBER_SW;
+  static const int32_t HEADER_MAGIC_NUMBER;
+  static const int32_t HEADER_MAGIC_NUMBER_SW;
 
 private:
 
