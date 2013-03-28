@@ -14,6 +14,6 @@ The library is divided into three parts:
 Documentation
 =============
 
-  * [Using the Gettext library in any C++ project](https://github.com/laurent22/simple-gettext/wiki/UsingTheLibraryInStandardCppProjects)
+  * [Using the Gettext library in any C++ project](https://github.com/laurent22/simple-gettext/wiki/Using-The-Gettext-Library-In-Standard-Cpp-Projects)
 
-  * [Using the Gettext library with the Qt Framework](https://github.com/laurent22/simple-gettext/wiki/SettingUpGettextForQt)
+  * [Using the Gettext library with the Qt Framework](https://github.com/laurent22/simple-gettext/wiki/Setting-Up-The-Gettext-Library-For-Qt)
