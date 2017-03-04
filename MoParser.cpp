@@ -22,7 +22,7 @@ const int32_t GettextMoParser::HEADER_MAGIC_NUMBER_SW = 0xde120495;
 
 
 GettextMoParser::GettextMoParser() {
-	swappedBytes_ = false;
+  swappedBytes_ = false;
   moFileHeader_ = NULL;
   moData_ = NULL;
   charset_ = NULL;
@@ -82,6 +82,7 @@ bool GettextMoParser::parseFile(const char* filePath) {
   ifstream moFile(filePath, ios::in | ios::binary);
   if (!moFile.read(moData, fileInfo.st_size)) {
     // Cannot read file data
+    delete[] moData;
     clearData();
     return false;
   }
