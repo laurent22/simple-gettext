@@ -68,7 +68,7 @@ void GettextMoParser::clearData() {
 
 bool GettextMoParser::parseFile(const char* filePath) {
   clearData();
-  
+
   struct stat fileInfo;
 
   if (stat(filePath, &fileInfo) != 0) {
@@ -126,7 +126,7 @@ GettextMoParser::~GettextMoParser() {
 
 char* GettextMoParser::charset() const {
   if (charset_ || charsetParsed_) return charset_;
-  if (!moData_) return NULL;  
+  if (!moData_) return NULL;
 
   charsetParsed_ = true;
 
@@ -138,17 +138,17 @@ char* GettextMoParser::charset() const {
   std::string info(infoBuffer);
   size_t contentTypePos = info.find("Content-Type: text/plain; charset=");
   if (contentTypePos == info.npos) return NULL;
-  
+
   size_t stringStart = contentTypePos + 34; // strlen("Content-Type: text/plain; charset=")
   size_t stringEnd = info.find('\n', stringStart);
   if (stringEnd == info.npos) return NULL;
-  
+
   int charsetLength = stringEnd - stringStart;
   if (charsetLength == 0) return NULL;
 
   charset_ = new char[charsetLength + 1];
   info.copy(charset_, charsetLength, stringStart);
-  
+
   charset_[charsetLength] = '\0';
 
   if (strcmp(charset_, "CHARSET") == 0) {
@@ -182,7 +182,7 @@ GettextMessage* GettextMoParser::getTranslation(const char* originalString, int 
   MoOffsetTableItem* originalTable = (MoOffsetTableItem*)(moData_ + moFileHeader_->offsetOriginalStrings);
   originalTable->length = swap_(originalTable->length);
   originalTable->offset = swap_(originalTable->offset);
-  
+
   int stringIndex;
   bool found = false;
 
@@ -193,7 +193,7 @@ GettextMessage* GettextMoParser::getTranslation(const char* originalString, int 
       found = true;
       break;
     }
-    
+
     originalTable++;
     originalTable->length = swap_(originalTable->length);
     originalTable->offset = swap_(originalTable->offset);
@@ -201,10 +201,10 @@ GettextMessage* GettextMoParser::getTranslation(const char* originalString, int 
 
 
   TranslatedMessage* message = new TranslatedMessage();
-  
+
 
   char* originalStringCopy = new char[originalLength + 1];
-  strcpy(originalStringCopy, originalString);
+  strncpy(originalStringCopy, originalString, originalLength);
   originalStringCopy[originalLength] = '\0';
 
   GettextMessage* mOriginal = new GettextMessage();
@@ -236,11 +236,11 @@ GettextMessage* GettextMoParser::getTranslation(const char* originalString, int 
   strncpy(translatedString, tempString, translationTable->length);
   translatedString[translationTable->length] = '\0';
 
-  
+
   GettextMessage* mTranslated = new GettextMessage();
   mTranslated->length = translationTable->length;
   mTranslated->string = translatedString;
-  
+
   message->translated = mTranslated;
 
   messages_.push_back(message);

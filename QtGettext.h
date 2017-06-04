@@ -35,7 +35,7 @@ public:
   inline QString catalogueName() const { return QString::fromAscii(LauGettext::catalogueName().c_str()); }
   inline QString catalogueLocation() const { return QString::fromAscii(LauGettext::catalogueLocation().c_str()); }
 
-  QString getTranslation(const QString& originalString) const; 
+  QString getTranslation(const QString& originalString) const;
   QStringList availableLocales() const;
 
   QString charset() const;

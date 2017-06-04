@@ -75,12 +75,12 @@ QString QtGettext::getTranslation(const QString& originalString) const {
     return QString::fromUcs4(temp, message->length);
   }
 
-  return QString::fromUtf8(message->string); 
+  return QString::fromUtf8(message->string);
 }
 
 
 void QtGettext::setCatalogueName(const QString& name) {
-  LauGettext::setCatalogueName(name.toAscii().data()); // name.toStdString());  
+  LauGettext::setCatalogueName(name.toAscii().data()); // name.toStdString());
 }
 
 

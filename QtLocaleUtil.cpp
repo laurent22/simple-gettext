@@ -148,7 +148,7 @@ QtLocaleUtil::QtLocaleUtil() {
     codeToLanguageE_["za"] = "Zhuang";
     codeToLanguageE_["zh"] = "Chinese";
     codeToLanguageE_["zu"] = "Zulu";
-  
+
   codeToLanguage_["an"] = "Aragonés";
   codeToLanguage_["da"] = "Dansk";
   codeToLanguage_["de"] = "Deutsch";
@@ -166,18 +166,18 @@ QtLocaleUtil::QtLocaleUtil() {
   codeToLanguage_["sq"] = "Shqip";
   codeToLanguage_["sr"] = "српски језик";
   codeToLanguage_["tr"] = "Türkçe";
-  codeToLanguage_["ja"] = "日本語";  
+  codeToLanguage_["ja"] = "日本語";
   codeToLanguage_["ko"] = "한국말";
-  codeToLanguage_["sv"] = "Svenska";    
-  codeToLanguage_["el"] = "ελληνικά";    
+  codeToLanguage_["sv"] = "Svenska";
+  codeToLanguage_["el"] = "ελληνικά";
   codeToLanguage_["zh"] = "中文";
-  codeToLanguage_["ro"] = "Română"; 
-  codeToLanguage_["et"] = "Eesti Keel"; 
-  codeToLanguage_["vi"] = "Tiếng Việt"; 
-  codeToLanguage_["hu"] = "Magyar"; 
-  
-  codeToCountry_["BR"] = "Brasil"; 
-  codeToCountry_["CN"] = "中国"; 
+  codeToLanguage_["ro"] = "Română";
+  codeToLanguage_["et"] = "Eesti Keel";
+  codeToLanguage_["vi"] = "Tiếng Việt";
+  codeToLanguage_["hu"] = "Magyar";
+
+  codeToCountry_["BR"] = "Brasil";
+  codeToCountry_["CN"] = "中国";
 }
 
 
@@ -194,7 +194,7 @@ QString QtLocaleUtil::getDisplayName(const QString& canonicalName) const {
       extraString = "简体"; // "Simplified" in "Simplified Chinese"
     } else {
       extraString = getCountryName(countryCode);
-    }    
+    }
   }
 
   if (languageCode == "zh" && (countryCode == "" || countryCode == "TW")) extraString = "繁體"; // "Traditional" in "Traditional Chinese"

@@ -14,7 +14,7 @@
 #endif
 
 #include <fstream>
-#include <iostream> 
+#include <iostream>
 
 LauGettext* LauGettext::instance_ = NULL;
 
