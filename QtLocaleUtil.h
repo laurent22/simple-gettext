@@ -14,7 +14,7 @@
 class QtLocaleUtil {
 
 public:
-	
+
   QtLocaleUtil();
   QString getDisplayName(const QString& canonicalName) const;
   QString getLanguageName(const QString& languageCode, bool defaultToEnglish = true) const;
@@ -22,7 +22,7 @@ public:
   QString getLanguageCodeOnly(const QString& canonicalName) const;
   QString getCountryCodeOnly(const QString& canonicalName) const;
   QString getCountryName(const QString& countryCode) const;
-	
+
 private:
 
   mutable std::map<QString, QString> codeToLanguage_;

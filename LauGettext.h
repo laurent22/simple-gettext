@@ -30,7 +30,7 @@ public:
   inline std::string catalogueName() const { return catalogueName_; }
   inline std::string catalogueLocation() const { return catalogueLocation_; }
 
-  GettextMessage* getTranslation(const char* originalString, int originalLength) const; 
+  GettextMessage* getTranslation(const char* originalString, int originalLength) const;
 
 protected:
 
