@@ -204,7 +204,7 @@ GettextMessage* GettextMoParser::getTranslation(const char* originalString, int 
   
 
   char* originalStringCopy = new char[originalLength + 1];
-  strcpy(originalStringCopy, originalString);
+  strncpy(originalStringCopy, originalString, originalLength);
   originalStringCopy[originalLength] = '\0';
 
   GettextMessage* mOriginal = new GettextMessage();
