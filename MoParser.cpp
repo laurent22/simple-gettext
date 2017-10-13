@@ -1,9 +1,3 @@
-/*
-  Copyright (C) 2010 Laurent Cozic. All right reserved.
-  Use of this source code is governed by a GNU/GPL license that can be
-  found in the LICENSE file.
-*/
-
 #pragma warning(disable: 4345) // warning C4345: behavior change: an object of POD type constructed with an initializer of the form () will be default-initialized
 #pragma warning(disable: 4996) // warning C4996: 'std::basic_string<_Elem,_Traits,_Ax>::copy': Function call with parameters that may be unsafe - this call relies on the caller to check that the passed values are correct. To disable this warning, use -D_SCL_SECURE_NO_WARNINGS. See documentation on how to use Visual C++ 'Checked Iterators'
 
